@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>test</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Our Pack!</h1>
+
+        <div class="row">
+            <div class="col-xs-2"></div>
+            <div class="col-xs-2"></div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>About</th>
+                            <th>Species</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for (let single of pack) { %>
+                        <tr>
+                            <td><%= single.name %></td>
+                            <td><%= single.about %></td>
+                            <td><%= single.species %></td>
+                            <td><a href="/pack/edit/<%= single.id %>" class="btn btn-Danger">Edit</a></td>
+                            <td><a href="/delete/<%= single.id %>" class="btn btn-Danger">Delete</a></td>
+                        </tr>
+                        <% } %>
+                    </tbody>
+                </table>
+                <a href="/add" class="btn btn-sucess">Add To Pack</a>
+            </div>
+            <div class="col-xs-2"></div>
+        </div>
+    </div>
+</body>
+
+</html>

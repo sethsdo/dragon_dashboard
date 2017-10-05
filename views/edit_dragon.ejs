@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>test</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-4"></div>
+            <div class="col-xs-4">
+                <h1>Change The Pack if you Dare!</h1>
+                <% if(typeof(errors) != 'undefined' ) { %>
+                    <% for (var x in errors) { %>
+                        <h3>
+                            <%= errors[x].message %>
+                        </h3>
+                    <% } %>
+                <% } %>
+                
+                <form class="form-horizontal" action="/edit/<%= id %>" method="post">
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="name">Name:</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="about">About:</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="about" placeholder="Enter About" name="about">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="species">Species:</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="species" placeholder="Enter species" name="species">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-Danger">Change The Pack</button>
+                        </div>
+                    </div>
+                </form>
+                <a href="/" class="btn btn-success">View Pack</a>
+            </div>
+            <div class="col-xs-4"></div>
+        </div>
+    </div>
+</body>
+
+</html>
